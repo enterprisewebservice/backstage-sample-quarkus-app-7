@@ -1,0 +1,36 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "my-quarkus-app-7"
+  annotations:
+    argocd/app-name: my-quarkus-app-7-dev
+    backstage.io/kubernetes-id: my-quarkus-app-7
+    github.com/project-slug: enterprisewebservice/backstage-sample-quarkus-app-7
+    backstage.io/techdocs-ref: dir:.
+  tags:
+    - java
+    - quarkus
+  links:
+    - url: https://devspaces.apps.cluster-ntw2z.ntw2z.sandbox201.opentlc.com/#https://github.com/enterprisewebservice/backstage-sample-quarkus-app-7?che-editor=che-incubator/che-code/insiders&devfilePath=.devfile-vscode.yaml
+      title: CodeReady Workspaces (VS Code)
+      icon: web
+    - url: https://devspaces.apps.cluster-ntw2z.ntw2z.sandbox201.opentlc.com/#https://github.com/enterprisewebservice/backstage-sample-quarkus-app-7?che-editor=che-incubator/che-idea/next&devfilePath=.devfile-intellij.yaml
+      title: CodeReady Workspaces (JetBrains IntelliJ)
+      icon: web
+spec:
+  type: service
+  lifecycle: production
+  owner: "Quarkus Team"
+  providesApis:
+    - "my-quarkus-app-7"
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: "my-quarkus-app-7"
+spec:
+  type: openapi
+  lifecycle: production
+  owner: "Quarkus Team"
+  definition:
+    $text: ./openapi.yaml
